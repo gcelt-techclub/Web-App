@@ -1,16 +1,23 @@
-import React from 'react'
-import { Link } from 'react-dom'
-import * as FaIcons from "react-icons/fa"
+import React from 'react';
+import * as FaIcons from "react-icons/fa";
+import "./Navbar.css";
+import { NavbarData } from "./NavbarData";
 
 function Navbar() {
   return (
-    <>
-        <div className="navbar">
-        <Link to="#" className='menu-bars'>
-
-        </Link>
-        </div>
-    </>
+    <div className='sidebar-container'>
+      <ul>
+        {NavbarData.map((val, key)=> {
+          return( 
+            <li key={key}> 
+              " "
+              <div>val.icon</div>
+              <div>  {val.title} </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   )
 }
 

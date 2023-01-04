@@ -11,7 +11,7 @@ import SportsBaseballIcon from "@mui/icons-material/SportsBaseball";
 import RequestQuoteRoundedIcon from "@mui/icons-material/RequestQuoteRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
-const Sidebar = ({ children }) => {
+const Sidebar = (/*{ children }*/) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItem = [

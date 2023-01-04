@@ -1,0 +1,43 @@
+
+.sportsbar{
+    color: #fff;
+    height: 30vh;
+    width: 250px;
+    transition: all 0.5s;
+    display:inline-flex;
+    
+    margin: 0 30%;
+}
+.holder{
+    width:80px;
+    height:80px;
+    border:2px solid #5442cc;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sports_id {
+    list-style-type: none;
+    color: rgb(161, 160, 160);
+    margin: 0 25px;
+    font-size: 20px;
+}
+.sports_id:hover{
+    color: #fff;
+    transition: all 0.5s;
+}
+#sports_title{
+    display:flex;
+    justify-content: center;
+}
+.selected{
+    border-radius:2px;
+    box-shadow: 0 0 0 3px #5442cc;
+    background: #fff;
+    margin-left: 45%;
+    margin-top: 10%;
+    width:7px;
+    height:7px;  
+    transform: rotate(45deg);     
+}

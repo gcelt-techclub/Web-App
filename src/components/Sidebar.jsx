@@ -3,6 +3,7 @@ import { NavLink, Outlet, useOutletContext } from "react-router-dom";
 import "./Sidebar.css";
 
 //import icons
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import Groups3RoundedIcon from "@mui/icons-material/Groups3Rounded";
 import { GiPodium } from "react-icons/gi";
@@ -53,8 +54,8 @@ const Sidebar = (/*{ children }*/) => {
   ];
 
   return (
-    <>
-      <div className="container">
+    <div className="main_body">
+      <div className="container1">
         <div className="sidebar">
           <div className="top_section">
             <h1 className="logo">Logo</h1>
@@ -74,10 +75,18 @@ const Sidebar = (/*{ children }*/) => {
 
         {/* Rendered thru children props(First Version) */}
         {/* <main>{children}</main> */}
-
-        <Outlet />
+        <div className="container2">
+          <div id="dp"></div>
+          <div className="Page_address">
+              <div >{ <ArrowBackIosNewIcon /> } </div>
+              <div className="address">Pagename / subPages</div>  
+          </div>
+          <br></br>
+          <Outlet />
+          </div>
+        
       </div>
-    </>
+    </div>
   );
 };
 

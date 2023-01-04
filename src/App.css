@@ -15,11 +15,3 @@ body{
   text-decoration: none;
   
 }
-.container{
-  display:flex;
-  background-color: #1e2849;
-}
-main{
-  width: 100%;
-  padding: 20px;
-}

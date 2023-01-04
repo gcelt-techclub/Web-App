@@ -1,8 +1,11 @@
 import React from 'react'
+import Sportsbar from "../components/SportsNavbar.jsx";
 
 function Teams() {
   return (
-    <div>Teams Page</div>
+    <div>
+      <Sportsbar />
+    </div>
   )
 }
 

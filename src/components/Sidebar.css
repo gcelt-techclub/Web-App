@@ -81,3 +81,7 @@
 .address{
     font-weight: bold;
 }
+.bottom_section{
+    position: relative;
+    bottom:-29%;
+}

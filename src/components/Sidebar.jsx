@@ -70,7 +70,11 @@ const Sidebar = (/*{ children }*/) => {
               <div id="icon">{item.icon}</div>
               <div id="title">{item.title}</div>
             </NavLink>
+            
           ))}
+          <div className="bottom_section">
+            <h4>A Collaboration of GCELT Tech Club and Sports Club</h4>
+          </div>
         </div>
 
         {/* Rendered thru children props(First Version) */}

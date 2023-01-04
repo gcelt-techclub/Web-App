@@ -41,9 +41,12 @@
     background:#1e2849;
     color: #fff;
     transition: all 0.5s;
-    padding:10px;
+    
 }
 .active{
     background: #5442cc;
     color: #fff;
+    margin-left:5px;
+    width:240px;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
 }

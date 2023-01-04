@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import "./Navbar.css";
+import "./Sidebar.css";
 
 //import icons
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
@@ -56,13 +56,13 @@ const Sidebar = ({children}) => {
         <div className="container">
            <div className="sidebar">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
+                   <h1 className="logo">Logo</h1>
                </div>
                {
                    menuItem.map((item, index)=>(
                        <NavLink to={item.link} key={index} className="link" activeclassName="active">
-                           <div className="icon">{item.icon}</div>
-                           <div className="link_text">{item.title}</div>
+                           <div id="icon" >{item.icon}</div>
+                           <div id="title" >{item.title}</div>
                        </NavLink>
                    ))
                }

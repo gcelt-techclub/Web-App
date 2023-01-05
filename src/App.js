@@ -15,13 +15,13 @@ import FeeRecords from "./pages/FeeRecords.jsx";
 import SView from "./pages/Sports/View";
 import SEdit from "./pages/Sports/Edit";
 import SCreate from "./pages/Sports/Create";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./LandingPage";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/'>
+        <Route path='/lp'>
           <Route index element = {<LandingPage />}/>
         </Route>
         
@@ -33,6 +33,9 @@ const App = () => {
           <Route path="tournament" element={<Tournament />} />
           <Route path="winners" element={<Winners />} />
           <Route path="feeRecords" element={<FeeRecords />} />
+
+          {/* <Route path="lp" element={<LandingPage />} /> */}
+
           <Route path="sports/view/:sportsName" element={<SView />} />
           <Route path="sports/edit/:sportsName" element={<SEdit />} />
           <Route path="sports/create/:sportsName" element={<SCreate />} />

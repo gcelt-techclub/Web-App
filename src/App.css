@@ -35,3 +35,27 @@ Typography{
 #Google_icon{
   font-size: 40px;
 }
+
+.error_background{
+  width:100vw;
+  height:100vh;
+  position: relative;
+}
+.error_background img{
+  width:100vw;
+  height:100%;
+}
+.error_background .error_btn{
+ position: absolute;
+ top:70%;
+ left:45%;
+ width:160px;
+ height:50px;
+ border-radius: 20px;
+ font-size: 25px;
+ background-color:#e3cfae ;
+ border-style: none;
+ border-bottom: 10px solid #63223A;
+ color:#A66E5F;
+ font-weight: bold;
+}

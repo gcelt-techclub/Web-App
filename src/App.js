@@ -16,6 +16,7 @@ import SView from "./pages/Sports/View";
 import SEdit from "./pages/Sports/Edit";
 import SCreate from "./pages/Sports/Create";
 import LandingPage from "./LandingPage";
+import Error from "./pages/Error";
 
 const App = () => {
   return (
@@ -44,7 +45,7 @@ const App = () => {
         <Route path="/user" element={<h1>User</h1> }>
 
         </Route>
-        
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
 

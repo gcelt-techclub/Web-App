@@ -53,3 +53,11 @@
     top:70%;
     outline:none;
 }
+h3{
+    color:#fff;
+}
+.field{
+    display: inline-flex;
+    justify-content: center;
+    color:#fff;
+}

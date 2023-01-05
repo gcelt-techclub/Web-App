@@ -17,11 +17,11 @@
 .cardholder{
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .card{
     flex: 0 0 calc(33.33% - 40px);
-    max-width:280px;
+    max-width:calc(33.33% - 40px);
     padding:5px;
     margin-bottom:30px;
     position: relative;
@@ -44,10 +44,12 @@
     position: absolute;
     right:5px;
     top:10%;
+    outline:none;
 }
 #edit_icon{
     font-size: 30px;
     position: absolute;
     right:5px;
     top:70%;
+    outline:none;
 }

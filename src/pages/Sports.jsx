@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 
 //import icons
@@ -17,8 +18,8 @@ import Carrom_i from "../assets/icons/carrom2.png";
 import "./Sports/Sports.css"
 
 function Sports() {
-  const [cards] = useState([
-    {   title: "Carrom",
+  const cards = [
+    {   title: "Carrom", 
         icon: <img src={Carrom_i} height='60px' />,
         size: "1",   fees: "20",    link: "",
     },
@@ -46,13 +47,17 @@ function Sports() {
     icon: <img src={Badminton_i} height='60px' />,
     size: "1",   fees: "20",    link: "/admin/winners",
     }
-  ])
+  ]
+  //for selection of the particular card
+  const [selectedIndex,setSelectedIndex] = useState(0) 
+  const navigate = useNavigate()
+
   return (
     <div className="space">
       <Paper className="sports_create_btn" style={{width: 200,height: 30, backgroundColor: '#2e325c',
         border: '2px solid #3b4285', borderRadius:'30px'}} elevation={8} >
-          <div class="tag">Create Sports</div>
-          <DataSaverOnOutlinedIcon id="add"/> 
+          <div className="tag">Create Sports</div>
+          <DataSaverOnOutlinedIcon id="add" onClick={ () => navigate(`/admin/sports/create/${'untitled'}`) }/> 
       </Paper>
          
       <div className="cardholder">
@@ -62,8 +67,8 @@ function Sports() {
 			<div className="icon">{sports.icon}</div>
 			<div className="title">{sports.title}</div>
 			<div className="details">Team Size:{sports.size}<br/>Entry Fees:{sports.fees} </div>
-			<View id="view_icon"/>
-			<Edit id="edit_icon"/>
+			<div  id="view_icon" onClick={ () => navigate(`/admin/sports/view/${sports.title.toLowerCase()}`) } ><View /></div>
+			<div id="edit_icon" onClick={ () => navigate(`/admin/sports/edit/${sports.title.toLowerCase()}`)}><Edit /></div>
 			</Paper>
 		))}
       </div>

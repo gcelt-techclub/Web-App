@@ -14,37 +14,37 @@ const SportsNavbar = () => {
         {
           title: "Chess",
           icon: <img src={Chess} height='65px' />,
-          link: "/admin/teams",
+          
         },
         {
           title: "Races",
           icon: <img src={Races} height='60px' />,
-          link: "/admin/teams",
+          
         },
         {
           title: "Cricket",
           icon: <img src={Cricket} height='60px' />,
-          link: "/admin/teams",
+          
         },
         {
           title: "Football",
           icon: <img src={Football} height='60px' />,
-          link: "/admin/teams",
+          
         },
         {
           title: "Volleyball",
           icon: <img src={Volleyball} height='60px'/>,
-          link: "/admin/teams",
+          
         },
         {
           title: "Badminton",
           icon: <img src={Badminton} height='60px' />,
-          link: "/admin/teams",
+          
         },
         {
           title: "Carrom",
           icon: <img src={Carrom} height='60px'/>,
-          link: "/admin/teams",
+          
         },
       ];
   return (
@@ -54,9 +54,9 @@ const SportsNavbar = () => {
           {menuItem.map((item, index) => (
             <li to={item.link}
               key={index} className="sports_id"  >
-              <div class="holder"><div id="sports_icon">{item.icon}</div></div>
+              <div className="holder"><div id="sports_icon">{item.icon}</div></div>
               <div id="sports_title">{item.title}</div>
-              <div class="selected"></div>
+              <div className="selected"></div>
             </li>
           ))}
         </div>

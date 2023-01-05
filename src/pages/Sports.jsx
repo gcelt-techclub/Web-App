@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Grid from '@mui/material/Grid';
 
 //import icons
 import DataSaverOnOutlinedIcon from '@mui/icons-material/DataSaverOnOutlined';
@@ -19,31 +18,31 @@ import "./Sports/Sports.css"
 function Sports() {
   const [cards] = useState([
     {   title: "Carrom",
-        icon: <img src={Carrom_i} height='60px' />,
+        icon: <img src={Carrom_i} height='60px' alt = 'carrom_icon'/>,
         size: "1",   fees: "20",    link: "",
     },
     {   title: "Chess",
-        icon: <img src={Chess_i} height='60px' />,
+        icon: <img src={Chess_i} height='60px' alt='chess_icon'/>,
         size: "1",   fees: "20",    link: "",
     },
     {   title: "Race",
-        icon: <img src={Races_i} height='60px' />,
+        icon: <img src={Races_i} height='60px' alt='races_icon'/>,
         size: "1",   fees: "20",    link: "",
     },
     {   title: "Cricket",
-    icon: <img src={Cricket_i} height='60px' />,
+    icon: <img src={Cricket_i} height='60px' alt='cricket_icon'/>,
     size: "1",   fees: "20",    link: "",
     },
     {   title: "Football",
-    icon: <img src={Football_i} height='60px' />,
+    icon: <img src={Football_i} height='60px' alt='football_icon'/>,
     size: "1",   fees: "20",    link: "",
     },
     {   title: "Volleyball",
-    icon: <img src={Volleyball_i} height='60px' />,
+    icon: <img src={Volleyball_i} height='60px' alt='volleyball_icon'/>,
     size: "1",   fees: "20",    link: "",
     },
     {   title: "Badminton",
-    icon: <img src={Badminton_i} height='60px' />,
+    icon: <img src={Badminton_i} height='60px' alt='badminton_icon'/>,
     size: "1",   fees: "20",    link: "/admin/winners",
     }
   ])

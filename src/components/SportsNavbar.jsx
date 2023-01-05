@@ -13,17 +13,17 @@ const SportsNavbar = () => {
     const menuItem = [
         {
           title: "Chess",
-          icon: <img src={Chess} height='65px' />,
+          icon: <img src={Chess} height='65px' alt='chess_icon'/>,
           link: "/admin/teams",
         },
         {
           title: "Races",
-          icon: <img src={Races} height='60px' />,
+          icon: <img src={Races} height='60px' alt='races_icon'/>,
           link: "/admin/teams",
         },
         {
           title: "Cricket",
-          icon: <img src={Cricket} height='60px' />,
+          icon: <img src={Cricket} height='60px' alt='cricket_icon'/>,
           link: "/admin/teams",
         },
         {

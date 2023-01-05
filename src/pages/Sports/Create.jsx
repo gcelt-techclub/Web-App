@@ -21,9 +21,10 @@ function Create() {
         </Grid>
         <Grid item xs={2.5}>
           <Item clasName="field" style={{ width: 190, height: 40 }} elevation={8}>
-            <Stack direction="row" spacing={2}><div>Team </div>
-              <TextField id="standard" style={{ width: 10, maxheight: 10 }} label="standard" variant="standard"
-              inputProps={{style: {fontSize: 25, position:absolute, top:-10}}}  />
+            <Stack direction="row" spacing={2}>
+              <div>Team Size</div>
+              <TextField id="standard" style={{ width: 50, maxheight: 10 }} label="standard" variant="standard"
+              inputProps={{style: {fontSize: 25, top:-40}}}  />
             </Stack>
           </Item>
         </Grid>

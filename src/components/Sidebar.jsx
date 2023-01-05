@@ -88,7 +88,6 @@ const Sidebar = (/*{ children }*/) => {
               <div >{ <ArrowBackIosNewIcon /> } </div>
               <div className="address">{location.pathname.slice(1)}</div>  
           </div>
-          <br></br>
           <Outlet />
           </div>
         

@@ -14,37 +14,37 @@ const SportsNavbar = () => {
   const menuItem = [
     {
       title: "Chess",
-      icon: <img src={Chess} height='65px' />,
+      icon: <img src={Chess} height='55px' />,
       
     },
     {
       title: "Races",
-      icon: <img src={Races} height='60px' />,
+      icon: <img src={Races} height='50px' />,
       
     },
     {
       title: "Cricket",
-      icon: <img src={Cricket} height='60px' />,
+      icon: <img src={Cricket} height='55px' />,
       
     },
     {
       title: "Football",
-      icon: <img src={Football} height='60px' />,
+      icon: <img src={Football} height='50px' />,
       
     },
     {
       title: "Volleyball",
-      icon: <img src={Volleyball} height='60px'/>,
+      icon: <img src={Volleyball} height='50px'/>,
       
     },
     {
       title: "Badminton",
-      icon: <img src={Badminton} height='60px' />,
+      icon: <img src={Badminton} height='50px' />,
       
     },
     {
       title: "Carrom",
-      icon: <img src={Carrom} height='60px'/>,
+      icon: <img src={Carrom} height='55px'/>,
       
     },
   ];

@@ -10,53 +10,59 @@ import Volleyball from "../assets/icons/Volleyball1.png";
 import Badminton from "../assets/icons/Badminton.png";
 import Carrom from "../assets/icons/carrom2.png";
 const SportsNavbar = () => {
-    const menuItem = [
-        {
-          title: "Chess",
-          icon: <img src={Chess} height='65px' alt='chess_icon'/>,
-          link: "/admin/teams",
-        },
-        {
-          title: "Races",
-          icon: <img src={Races} height='60px' alt='races_icon'/>,
-          link: "/admin/teams",
-        },
-        {
-          title: "Cricket",
-          icon: <img src={Cricket} height='60px' alt='cricket_icon'/>,
-          link: "/admin/teams",
-        },
-        {
-          title: "Football",
-          icon: <img src={Football} height='60px' />,
-          link: "/admin/teams",
-        },
-        {
-          title: "Volleyball",
-          icon: <img src={Volleyball} height='60px'/>,
-          link: "/admin/teams",
-        },
-        {
-          title: "Badminton",
-          icon: <img src={Badminton} height='60px' />,
-          link: "/admin/teams",
-        },
-        {
-          title: "Carrom",
-          icon: <img src={Carrom} height='60px'/>,
-          link: "/admin/teams",
-        },
-      ];
+
+  const menuItem = [
+    {
+      title: "Chess",
+      icon: <img src={Chess} height='65px' />,
+      
+    },
+    {
+      title: "Races",
+      icon: <img src={Races} height='60px' />,
+      
+    },
+    {
+      title: "Cricket",
+      icon: <img src={Cricket} height='60px' />,
+      
+    },
+    {
+      title: "Football",
+      icon: <img src={Football} height='60px' />,
+      
+    },
+    {
+      title: "Volleyball",
+      icon: <img src={Volleyball} height='60px'/>,
+      
+    },
+    {
+      title: "Badminton",
+      icon: <img src={Badminton} height='60px' />,
+      
+    },
+    {
+      title: "Carrom",
+      icon: <img src={Carrom} height='60px'/>,
+      
+    },
+  ];
+  
+    const [Selectedsports, setSelectedsports] = useState(menuItem[Math.floor(menuItem.length /2)].title)
+
+
+
   return (
     <>
       <div className="sports-container">
         <div className="sportsbar">
           {menuItem.map((item, index) => (
             <li to={item.link}
-              key={index} className="sports_id"  >
-              <div class="holder"><div id="sports_icon">{item.icon}</div></div>
+              key={index} className="sports_id" value={item.title}  onClick={() => setSelectedsports(item.title)}>
+              <div className="holder"><div id="sports_icon">{item.icon}</div></div>
               <div id="sports_title">{item.title}</div>
-              <div class="selected"></div>
+              <div className={Selectedsports === item.title ? "selected" : ""}></div>
             </li>
           ))}
         </div>

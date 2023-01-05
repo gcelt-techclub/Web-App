@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Outlet, useOutletContext } from "react-router-dom";
+import { NavLink, Outlet, useOutletContext, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 //import icons
@@ -14,6 +14,9 @@ import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
 const Sidebar = (/*{ children }*/) => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  console.log(typeof(location.pathname));
 
   const menuItem = [
     {
@@ -83,7 +86,7 @@ const Sidebar = (/*{ children }*/) => {
           <div id="dp"></div>
           <div className="Page_address">
               <div >{ <ArrowBackIosNewIcon /> } </div>
-              <div className="address">Pagename / subPages</div>  
+              <div className="address">{location.pathname.slice(1)}</div>  
           </div>
           <br></br>
           <Outlet />

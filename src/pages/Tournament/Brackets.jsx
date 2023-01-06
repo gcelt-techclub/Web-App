@@ -1,10 +1,10 @@
 import React from 'react'
-import Tournamet from "../Tournament.jsx"
+import Tournament from "../Tournament.jsx"
 
 function Brackets() {
   return (
     <div>
-        <Tournamet />
+        <h1>Brackets</h1>
     </div>
   )
 }

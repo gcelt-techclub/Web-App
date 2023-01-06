@@ -1,10 +1,10 @@
 import React from 'react'
-import Tournamet from "../Tournament.jsx"
+import Tournament from "../Tournament.jsx"
 
 function Matches() {
   return (
     <div>
-        <Tournamet />
+        <h1>Matches</h1>
     </div>
   )
 }

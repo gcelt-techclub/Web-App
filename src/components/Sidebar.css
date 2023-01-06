@@ -71,6 +71,8 @@
     border-radius: 50%;
     margin:10px;
     left:92%;
+    display: flex;
+    justify-content: center;
 }
 
 .Page_address{

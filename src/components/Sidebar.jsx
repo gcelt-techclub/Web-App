@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Avatar from '@mui/material/Avatar';
 import { NavLink, Outlet, useOutletContext, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
@@ -83,7 +84,7 @@ const Sidebar = (/*{ children }*/) => {
         {/* Rendered thru children props(First Version) */}
         {/* <main>{children}</main> */}
         <div className="container2">
-          <div id="dp"></div>
+          <div id="dp"> <Avatar sx={{ width: 50, height: 50 ,bgcolor: '#5442cc' }}>N</Avatar></div>
           <div className="Page_address">
               <div >{ <ArrowBackIosNewIcon /> } </div>
               <div className="address">{location.pathname.slice(1)}</div>  

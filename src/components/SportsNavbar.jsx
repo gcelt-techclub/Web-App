@@ -5,6 +5,7 @@ import "./Sportsbar.css";
 import {menuItem} from '../data/sportsList';
 
 import { SelectedSports } from "../context/context";
+
 const SportsNavbar = () => {
   const ctx = useContext(SelectedSports);
 

@@ -61,3 +61,10 @@ h3{
     justify-content: center;
     color:#fff;
 }
+.grid_margin{
+    padding: 20px 0 10px;
+}
+.icon_create{
+    display: flex;
+    justify-content: center;
+}

@@ -17,7 +17,6 @@ const Sidebar = (/*{ children }*/) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  console.log(typeof(location.pathname));
 
   const menuItem = [
     {

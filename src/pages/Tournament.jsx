@@ -20,6 +20,8 @@ const ColorButton = styled(Button)(({ theme }) => ({
     backgroundColor: '#5442CC',
   },
 }));
+
+
 function Tournament() {
   const [selected,setSelected] = useState("matches");
 
@@ -43,8 +45,6 @@ function Tournament() {
 
           {selected === "matches" ? <Matches /> : <Brackets />}
         </Stack>
-
-
       </Stack>
     </div>
     </SelectedSports.Provider>

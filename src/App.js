@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import {
   BrowserRouter,
@@ -15,14 +15,33 @@ import FeeRecords from "./pages/FeeRecords.jsx";
 import SView from "./pages/Sports/View";
 import SEdit from "./pages/Sports/Edit";
 import SCreate from "./pages/Sports/Create";
-import LandingPage from "./LandingPage";
+
 import Error from "./pages/Error";
 
+import LandingPage from './pages/LandingPage';
+
+
+import {AuthContext} from './context/context';
+
+
 const App = () => {
+
+  const [authState,setAuthState] = useState({
+    state : false,
+    details : null
+  });
+
+  const authContextObj = {
+    authState : authState,
+    changeAuthState : setAuthState,
+    currentUser : null
+  }
+
   return (
+    <AuthContext.Provider value = {authContextObj}>
     <BrowserRouter>
       <Routes>
-        <Route path='/lp'>
+        <Route path='/'>
           <Route index element = {<LandingPage />}/>
         </Route>
         
@@ -35,7 +54,6 @@ const App = () => {
           <Route path="winners" element={<Winners />} />
           <Route path="feeRecords" element={<FeeRecords />} />
 
-          {/* <Route path="lp" element={<LandingPage />} /> */}
 
           <Route path="sports/view/:sportsName" element={<SView />} />
           <Route path="sports/edit/:sportsName" element={<SEdit />} />
@@ -48,7 +66,7 @@ const App = () => {
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
-
+    </AuthContext.Provider>
     
   );
 };

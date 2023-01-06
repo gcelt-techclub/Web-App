@@ -1,9 +1,17 @@
+.main_body{
+   display:flex;
+}
+.container1{
+    flex:30%;
+    display:flex;
+    background-color: #1e2849;
+  }
+
 .sidebar-list{
     height:auto;
     width:100%;
     padding:10px;
 }
-
 .sidebar{
     background: #21265b;
     color: #fff;
@@ -41,9 +49,41 @@
     background:#1e2849;
     color: #fff;
     transition: all 0.5s;
-    padding:10px;
+    
 }
 .active{
     background: #5442cc;
     color: #fff;
+    margin-left:5px;
+    width:240px;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+
+.container2{
+    flex:70%;
+    margin-left: 3%; 
+}
+#dp {
+    position:relative;
+    background: #5442cc;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    margin:10px;
+    left:92%;
+    display: flex;
+    justify-content: center;
+}
+
+.Page_address{
+    display:flex;
+    color:#fff;
+    font-size: large;
+}
+.address{
+    font-weight: bold;
+}
+.bottom_section{
+    position: relative;
+    bottom:-29%;
 }

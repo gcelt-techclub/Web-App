@@ -1,4 +1,3 @@
-import React, { useState, useContext, useEffect } from "react";
 import Paper from "@mui/material/Paper";
 import { Button, Stack, Typography } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
@@ -6,12 +5,18 @@ import "../App.css";
 
 import { useLogin } from "../hooks/useLogin";
 
+import { useNavigate } from "react-router-dom";
+
 function LandingPage() {
   const { error, isLoading, login } = useLogin();
+  const navigate = useNavigate();
 
-  const handleSignIn = () => {
+  const handleSignIn = async () => {
     console.log("Clicked");
-    login();
+    await login();
+    if (!error) {
+      navigate("/admin")
+    }
   };
   return (
     <div className="container">
@@ -35,22 +40,6 @@ function LandingPage() {
       </Paper>
     </div>
   );
-
-  // const handleSignIn = async () => {
-  //   console.log("Clicked")
-  //   const res = await signInWithPopup(auth,provider);
-  //   res.user ? authContext.changeAuthState(true) : authContext.changeAuthState(false);
-  // }
-
-  // const handleAlreadySignedIn = async () => {
-  //   const currentUser = authContext.authState.currentUser;
-
-  //   const userDetails = await getUser(currentUser.uid);
-  //   return <h1>{JSON.stringify(userDetails)}</h1>
-  // }
-
-  // if(authContext.authState.state) handleAlreadySignedIn();
-  // else
 }
 
 export default LandingPage;

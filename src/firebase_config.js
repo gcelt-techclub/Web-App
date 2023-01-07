@@ -1,18 +1,20 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-
-
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+// // configure dotenv to fetch environment variables
+// import { config } from "dotenv";
+// config({ path: "../.env.development.local"});
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDv92M_Ku9eMG-nNgWJQfra56eGkWgzkkQ",
-  authDomain: "teammate-6ed2f.firebaseapp.com",
-  projectId: "teammate-6ed2f",
-  storageBucket: "teammate-6ed2f.appspot.com",
-  messagingSenderId: "125218266480",
-  appId: "1:125218266480:web:db97cfd5e039c8378783b5",
-  measurementId: "G-L7FFEBPFX9"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 export const app = initializeApp(firebaseConfig);

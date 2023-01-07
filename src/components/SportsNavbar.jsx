@@ -4,10 +4,10 @@ import "./Sportsbar.css";
 
 import {menuItem} from '../data/sportsList';
 
-import { SelectedSports } from "../context/context";
+// import { SelectedSports } from "../context/context";
 
 const SportsNavbar = () => {
-  const ctx = useContext(SelectedSports);
+  // const ctx = useContext(SelectedSports);
 
   return (
     <>
@@ -19,14 +19,14 @@ const SportsNavbar = () => {
               key={index}
               className="sports_id"
               value={item.title}
-              onClick={() => ctx.toggleActiveSport(item.title)}
+              // onClick={() => ctx.toggleActiveSport(item.title)}
             >
               <div className="holder">
                 <div id="sports_icon">{item.icon}</div>
               </div>
               <div id="sports_title">{item.title}</div>
               <div
-                className={ctx.activeSport === item.title ? "selected" : ""}
+                // className={ctx.activeSport === item.title ? "selected" : ""}
               ></div>
             </li>
           ))}

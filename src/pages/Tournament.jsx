@@ -4,7 +4,7 @@ import { Stack, Paper, styled, TextField, Grid, Button } from '@mui/material'
 import Matches from './Tournament/Matches.jsx';
 import Brackets from './Tournament/Brackets.jsx';
 
-import { SelectedSports } from '../context/context.js';
+// import { SelectedSports } from '../context/context.js';
 // Later we will pull it from DB
 import {menuItem} from '../data/sportsList'
 
@@ -25,15 +25,15 @@ const ColorButton = styled(Button)(({ theme }) => ({
 function Tournament() {
   const [selected,setSelected] = useState("matches");
 
-  const [activeSport,setActiveSport] = useState(menuItem[Math.floor(menuItem.length / 2)].title);
+  // const [activeSport,setActiveSport] = useState(menuItem[Math.floor(menuItem.length / 2)].title);
 
-  const sportsContextObj = {
-    activeSport : activeSport,
-    toggleActiveSport : setActiveSport
-  };
+  // const sportsContextObj = {
+  //   activeSport : activeSport,
+  //   toggleActiveSport : setActiveSport
+  // };
 
   return (
-    <SelectedSports.Provider value={sportsContextObj}>
+    // <SelectedSports.Provider value={sportsContextObj}>
     <div>
       <Sportsbar />
       <Stack direction = "column">
@@ -47,7 +47,7 @@ function Tournament() {
         </Stack>
       </Stack>
     </div>
-    </SelectedSports.Provider>
+    // </SelectedSports.Provider>
   )
 }
 

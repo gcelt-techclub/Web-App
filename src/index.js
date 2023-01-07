@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-import {app} from './firebase_config';
+// auth context
+import { AuthContextProvider } from './context/authContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <AuthContextProvider>
+        <App />
+    </AuthContextProvider>
 );
 
 

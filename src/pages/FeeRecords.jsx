@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Sportsbar from "../components/SportsNavbar.jsx";
 
-import { SelectedSports } from '../context/context.js';
+// import { SelectedSports } from '../context/context.js';
 
 
 // Later we will pull it from DB
@@ -17,13 +17,19 @@ function FeeRecords() {
   };
 
   return (
-
-    <SelectedSports.Provider value={sportsContextObj}>
     <div>
       <Sportsbar />
     </div>
-   </SelectedSports.Provider>
+
+    
   )
 }
 
 export default FeeRecords
+
+
+{/* <SelectedSports.Provider value={sportsContextObj}>
+    <div>
+      <Sportsbar />
+    </div>
+   </SelectedSports.Provider> */}

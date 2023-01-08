@@ -17,6 +17,8 @@ function LandingPage() {
     if (!error) {
       navigate("/admin")
     }
+
+    console.log(error);
   };
   return (
     <div className="container">

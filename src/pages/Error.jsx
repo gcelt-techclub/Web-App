@@ -6,7 +6,7 @@ function Error() {
   return (
     <div className="error_background">
         <img src={bg} alt="Error 404"/>
-       <button className="error_btn">Go Back</button>
+        <button className="error_btn">Go Back</button>
     </div>
   )
 }

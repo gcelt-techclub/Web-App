@@ -1,13 +1,15 @@
-import React, { useState, useContext } from "react";
-import { NavLink, Outlet, useOutletContext } from "react-router-dom";
 import "./Sportsbar.css";
 
-import {menuItem} from '../data/sportsList';
+import { menuItem } from "../data/sportsList";
 
-// import { SelectedSports } from "../context/context";
+// useSportsContext hook
+import { useSportsContext } from "../hooks/useSportsContext";
 
 const SportsNavbar = () => {
-  // const ctx = useContext(SelectedSports);
+  const { selectedSports, dispatch } = useSportsContext();
+
+  const handleClick = (selection) =>
+    dispatch({ type: "CHANGE_SPORTS", payload: selection });
 
   return (
     <>
@@ -19,21 +21,18 @@ const SportsNavbar = () => {
               key={index}
               className="sports_id"
               value={item.title}
-              // onClick={() => ctx.toggleActiveSport(item.title)}
+              onClick={() => handleClick(item.title)}
             >
               <div className="holder">
                 <div id="sports_icon">{item.icon}</div>
               </div>
               <div id="sports_title">{item.title}</div>
               <div
-                // className={ctx.activeSport === item.title ? "selected" : ""}
+                className={selectedSports === item.title ? "selected" : ""}
               ></div>
             </li>
           ))}
         </div>
-
-        {/* Rendered thru children props(First Version) */}
-        {/* <main>{children}</main> */}
       </div>
     </>
   );

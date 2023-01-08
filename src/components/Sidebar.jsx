@@ -1,63 +1,89 @@
-import React, { useState } from "react";
-import Avatar from '@mui/material/Avatar';
-import { NavLink, Outlet, useOutletContext, useLocation } from "react-router-dom";
+// useState hook
+import { useState } from "react";
+
+// Avatar component
+import Avatar from "@mui/material/Avatar";
+
+// react router dom
+import {
+  NavLink,
+  Outlet,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
+
+// useLogout hook
+import { useLogout } from "../hooks/useLogout";
+
+// styles
 import "./Sidebar.css";
 
 //import icons
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import Groups3RoundedIcon from "@mui/icons-material/Groups3Rounded";
-import { GiPodium } from "react-icons/gi";
-import { GiTrophyCup } from "react-icons/gi";
+import { GiPodium, GiTrophyCup } from "react-icons/gi";
 import SportsBaseballIcon from "@mui/icons-material/SportsBaseball";
 import RequestQuoteRoundedIcon from "@mui/icons-material/RequestQuoteRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
+const menuItem = [
+  {
+    title: "Dashboard",
+    icon: <DashboardOutlinedIcon />,
+    link: "/",
+  },
+  {
+    title: "Teams",
+    icon: <Groups3RoundedIcon />,
+    link: "/teams",
+  },
+  {
+    title: "Sports",
+    icon: <SportsBaseballIcon />,
+    link: "/sports",
+  },
+  {
+    title: "Tournament",
+    icon: <GiTrophyCup />,
+    link: "/tournament",
+  },
+  {
+    title: "Winner",
+    icon: <GiPodium />,
+    link: "/winners",
+  },
+  {
+    title: "Fee Records",
+    icon: <RequestQuoteRoundedIcon />,
+    link: "/feeRecords",
+  },
+  
+];
+
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const toggledp = () =>{
-    setIsOpen((pvalue)=>!pvalue)
+  const navigate = useNavigate();
+
+  // hook function to logout
+  const { logout, error } = useLogout();
+
+  // function to toggle dropdown
+  const toggledp = () => setIsOpen((pvalue) => !pvalue)
+
+  // function to logout
+  const logoutHandler = async () => {
+    console.log("logout");
+    setIsOpen(false); // close the dropdown
+    await logout();
+    if (!error) {
+      navigate("/signin")
+    } else {
+    console.error(error);
+    }
+    
   }
-
-  const menuItem = [
-    {
-      title: "Dashboard",
-      icon: <DashboardOutlinedIcon />,
-      link: "/",
-    },
-    {
-      title: "Teams",
-      icon: <Groups3RoundedIcon />,
-      link: "/teams",
-    },
-    {
-      title: "Sports",
-      icon: <SportsBaseballIcon />,
-      link: "/sports",
-    },
-    {
-      title: "Tournament",
-      icon: <GiTrophyCup />,
-      link: "/tournament",
-    },
-    {
-      title: "Winner",
-      icon: <GiPodium />,
-      link: "/winners",
-    },
-    {
-      title: "Fee Records",
-      icon: <RequestQuoteRoundedIcon />,
-      link: "/feeRecords",
-    },
-    {
-      title: "Log out",
-      icon: <LogoutRoundedIcon />,
-      link: "/dashboard",
-    },
-  ];
-
   return (
     <div className="main_body">
       <div className="container1">
@@ -81,9 +107,6 @@ const Sidebar = () => {
             <h4>A Collaboration of GCELT Tech Club and Sports Club</h4>
           </div>
         </div>
-
-        {/* Rendered thru children props(First Version) */}
-        {/* <main>{children}</main> */}
         <div className="container2">
           <div id="dp" onClick={toggledp}> 
           <Avatar sx={{ width: 50, height: 50 ,bgcolor: '#5442cc' }}>N</Avatar>
@@ -93,9 +116,9 @@ const Sidebar = () => {
               <h4>Saptarshi Chatterjee</h4>
             </li>
             <hr></hr>
-            <li className="sub-menu-out">
-               <LogoutRoundedIcon />
-               <h3 id="font">Log out</h3>
+            <li className="sub-menu-out" onClick={logoutHandler}>
+                <LogoutRoundedIcon />
+                <h3 id="font">Log out</h3>
             </li>
           </ul>
           </div>
@@ -103,7 +126,6 @@ const Sidebar = () => {
               <div >{ <ArrowBackIosNewIcon /> } </div>
               <div className="address">{location.pathname.slice(1)}</div>  
           </div>
-          <br></br>
           <Outlet />
           </div>
         </div>
@@ -112,5 +134,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-

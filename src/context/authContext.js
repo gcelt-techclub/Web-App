@@ -39,13 +39,11 @@ export const AuthContextProvider = ({children}) => {
     useEffect(() => {
         // check if user is logged in
         const unsub = auth.onAuthStateChanged((user) => {
-            if (user) {
                 dispatch({
                     type: "AUTH_IS_READY",
                     payload: user,
                 });
                 unsub();
-            }
         });
     }, []);
 

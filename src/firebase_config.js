@@ -3,9 +3,6 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// // configure dotenv to fetch environment variables
-// import { config } from "dotenv";
-// config({ path: "../.env.development.local"});
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,

@@ -1,3 +1,5 @@
 1) Never use small letters as first letter in React Component
 
 2) always use onAuthStateChanged for detecting current user in Firebase
+
+3) Never remove react strict mode from index.js

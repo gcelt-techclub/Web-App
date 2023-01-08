@@ -1,9 +1,9 @@
 import Paper from "@mui/material/Paper";
 import { Button, Stack, Typography } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
-import "../App.css";
+import "../../App.css";
 
-import { useLogin } from "../hooks/useLogin";
+import { useLogin } from "../../hooks/useLogin";
 
 import { useNavigate } from "react-router-dom";
 

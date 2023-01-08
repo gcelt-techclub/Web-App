@@ -1,6 +1,6 @@
 import React from 'react'
-import "../App.css"
-import bg  from "../assets/error.png"
+import "../../App.css"
+import bg  from "../../assets/error.png"
 
 function Error() {
   return (

@@ -10,17 +10,17 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 
 // pages
-import Dashboard from "./pages/Dashboard.jsx";
-import Teams from "./pages/Teams.jsx";
-import Sports from "./pages/Sports.jsx";
-import Tournament from "./pages/Tournament.jsx";
-import Winners from "./pages/Winners.jsx";
-import FeeRecords from "./pages/FeeRecords.jsx";
-import SView from "./pages/Sports/View";
-import SEdit from "./pages/Sports/Edit";
-import SCreate from "./pages/Sports/Create";
+import Dashboard from "./admin/pages/Dashboard.jsx";
+import Teams from "./admin/pages/Teams.jsx";
+import Sports from "./admin/pages/Sports.jsx";
+import Tournament from "./admin/pages/Tournament.jsx";
+import Winners from "./admin/pages/Winners.jsx";
+import FeeRecords from "./admin/pages/FeeRecords.jsx";
+import SView from "./admin/pages/Sports/View";
+import SEdit from "./admin/pages/Sports/Edit";
+import SCreate from "./admin/pages/Sports/Create";
 import Error from "./pages/Error";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./admin/pages/LandingPage";
 
 const App = () => {
   const { authIsReady, user } = useAuthContext();

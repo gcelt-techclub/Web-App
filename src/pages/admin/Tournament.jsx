@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Sportsbar from "../components/SportsNavbar.jsx";
+import Sportsbar from "../../components/SportsNavbar.jsx";
 import { Stack, Paper, styled, TextField, Grid, Button } from '@mui/material'
 import Matches from './Tournament/Matches.jsx';
 import Brackets from './Tournament/Brackets.jsx';
@@ -23,17 +23,9 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 
 function Tournament() {
-  const [selected,setSelected] = useState("matches");
-
-  // const [activeSport,setActiveSport] = useState(menuItem[Math.floor(menuItem.length / 2)].title);
-
-  // const sportsContextObj = {
-  //   activeSport : activeSport,
-  //   toggleActiveSport : setActiveSport
-  // };
+  const [selected,setSelected] = useState("matches")
 
   return (
-    // <SelectedSports.Provider value={sportsContextObj}>
     <div>
       <Sportsbar />
       <Stack direction = "column">
@@ -47,7 +39,6 @@ function Tournament() {
         </Stack>
       </Stack>
     </div>
-    // </SelectedSports.Provider>
   )
 }
 

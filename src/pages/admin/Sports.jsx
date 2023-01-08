@@ -6,13 +6,13 @@ import DataSaverOnOutlinedIcon from '@mui/icons-material/DataSaverOnOutlined';
 import View from '@mui/icons-material/VisibilityOutlined';
 import Edit from '@mui/icons-material/EditOutlined';
 import Paper from '@mui/material/Paper';
-import Chess_i from "../assets/icons/chess2.png";
-import Cricket_i from "../assets/icons/cricket2.png";
-import Football_i from "../assets/icons/football2.png";
-import Volleyball_i from "../assets/icons/volleyball2.png";
-import Races_i from "../assets/icons/Race.png";
-import Badminton_i from "../assets/icons/Badminton.png";
-import Carrom_i from "../assets/icons/carrom2.png";
+import Chess_i from "../../assets/icons/chess2.png";
+import Cricket_i from "../../assets/icons/cricket2.png";
+import Football_i from "../../assets/icons/football2.png";
+import Volleyball_i from "../../assets/icons/volleyball2.png";
+import Races_i from "../../assets/icons/Race.png";
+import Badminton_i from "../../assets/icons/Badminton.png";
+import Carrom_i from "../../assets/icons/carrom2.png";
 
 import "./Sports/Sports.css"
 

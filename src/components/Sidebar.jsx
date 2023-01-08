@@ -13,10 +13,12 @@ import SportsBaseballIcon from "@mui/icons-material/SportsBaseball";
 import RequestQuoteRoundedIcon from "@mui/icons-material/RequestQuoteRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
-const Sidebar = (/*{ children }*/) => {
+const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-
+  const toggledp = () =>{
+    setIsOpen((pvalue)=>!pvalue)
+  }
 
   const menuItem = [
     {
@@ -83,7 +85,20 @@ const Sidebar = (/*{ children }*/) => {
         {/* Rendered thru children props(First Version) */}
         {/* <main>{children}</main> */}
         <div className="container2">
-          <div id="dp"> <Avatar sx={{ width: 50, height: 50 ,bgcolor: '#5442cc' }}>N</Avatar></div>
+          <div id="dp" onClick={toggledp}> 
+          <Avatar sx={{ width: 50, height: 50 ,bgcolor: '#5442cc' }}>N</Avatar>
+          <ul className = {`sub-menu-holder ${ isOpen ? ' open-menu' : ' '} `}>
+            <li className="sub-menu">
+              <Avatar sx={{ width: 30, height: 30 ,bgcolor: '#5442cc' }}>N</Avatar>
+              <h4>Saptarshi Chatterjee</h4>
+            </li>
+            <hr></hr>
+            <li className="sub-menu-out">
+               <LogoutRoundedIcon />
+               <h3 id="font">Log out</h3>
+            </li>
+          </ul>
+          </div>
           <div className="Page_address">
               <div >{ <ArrowBackIosNewIcon /> } </div>
               <div className="address">{location.pathname.slice(1)}</div>  
@@ -91,8 +106,7 @@ const Sidebar = (/*{ children }*/) => {
           <br></br>
           <Outlet />
           </div>
-        
-      </div>
+        </div>
     </div>
   );
 };

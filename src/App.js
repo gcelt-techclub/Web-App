@@ -23,14 +23,14 @@ import Error from "./pages/Error";
 import LandingPage from "./pages/LandingPage";
 
 const App = () => {
-  const { state: user, authIsReady } = useAuthContext();
-  console.log("user: ", user);
+  const { authIsReady, user } = useAuthContext();
   return (
     <>
-      {authIsReady && <div>Loading...</div>}
-      {!authIsReady && (
+      {!authIsReady && <div>Loading...</div>}
+      {authIsReady && (
         <BrowserRouter>
           <Routes>
+          <Route path="/" element={<Navigate to={"/signin"} />} />
             <Route
               path="/signin"
               index
@@ -41,7 +41,6 @@ const App = () => {
                 index
                 element={user ? <Dashboard /> : <Navigate to={"/signin"} />}
               />
-              <Route path="dashboard" element={<Dashboard />} />
               <Route path="teams" element={<Teams />} />
               <Route path="sports" element={<Sports />} />
               <Route path="tournament" element={<Tournament />} />

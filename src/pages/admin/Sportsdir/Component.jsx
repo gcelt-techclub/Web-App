@@ -1,9 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { Stack, Paper, styled, TextField, Grid, Button } from "@mui/material";
+import Box from '@mui/material/Box';
+import ListItemText from '@mui/material/ListItemText';
+import Checkbox from '@mui/material/Checkbox';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Chip from '@mui/material/Chip';
+import { Sports_Icon_List } from "./Sports_Icon_List";
 import Football_i from "../../../assets/icons/football2.png";
 import "../../../App.css";
 
 import { createSport, updateSport } from "../../../API/sports";
+import { indexedDBLocalPersistence } from "firebase/auth";
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT + ITEM_PADDING_TOP,
+      width: 250,
+      backgroundColor: '#2e325c',
+      border: '2px solid #3b4285',
+      borderRadius: '10px',
+      color: '#fff',
+    },
+  },
+};
+const names = [
+  'Oliver Hansen',
+  'Van Henry',
+  'April Tucker',
+  'Ralph Hubbard',
+  'Omar Alexander',
+  'Carlos Abbott',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder',
+];
 
 const ColorButton = styled(Button)(({ theme }) => ({
   backgroundColor: "#2e325c",
@@ -53,15 +90,15 @@ const RedTextField = styled((props) => (
   />
 ))(() => ({}));
 
-function Component({ isEditable,isNameEditable,data }) {
+function Component({ isEditable, isNameEditable, data }) {
 
-  const [formData,setFormData] = useState(data);
-
+  const [formData, setFormData] = useState(data);
+  const [imgName, setImgName] = useState([]);
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     console.log(formData, ' is for submission')
     const res = isNameEditable === true ? await createSport(formData) : await updateSport(formData);
     console.log(res);
@@ -69,34 +106,40 @@ function Component({ isEditable,isNameEditable,data }) {
     e.reset();
   };
 
+
+  const handleChange = (event) => {
+    setImgName(event.target.value);
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <Stack direction="row" spacing={2}>
-        <Paper
-          style={{
-            width: 100,
-            height: 60,
-            backgroundColor: "#2e325c",
-            border: "2px solid #3b4285",
-            borderRadius: "30px",
-          }}
-          elevation={8}
-        >
-          <div className="icon_create">
-            {<img src={Football_i} width="60px" paddingleft="10px" />}{" "}
-          </div>
-        </Paper>
+        <FormControl style={{ width: 120, maxheight: 20, backgroundColor: '#2e325c', border: '2px solid #3b4285', borderRadius: '10px', color: '#fff', }}>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={imgName}
+            label="Age"
+            onChange={handleChange}
+          >
+            {Sports_Icon_List.map((item, index) => (
+              <MenuItem key={index} value={item.title} >
+                <ListItemText primary={item.icon} />
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <CSSTextField
           disabled={!isNameEditable}
           id="sportsName"
           style={{ width: 400, maxheight: 40 }}
           label="sports name"
           variant="outlined"
-          name = "sports_name"
-          
+          name="sports_name"
+
           // inputProps = {{value : formData["name"]}}
-          onChange = {(e) => {
-            setFormData((prev) => ({...prev,["name"] : e.target.value}))
+          onChange={(e) => {
+            setFormData((prev) => ({ ...prev, ["name"]: e.target.value }))
           }}
 
           value={formData["name"]}
@@ -108,8 +151,8 @@ function Component({ isEditable,isNameEditable,data }) {
           label="Team Size"
           variant="outlined"
 
-          onChange = {(e) => {
-            setFormData((prev) => ({...prev,["team_size"] : e.target.value}))
+          onChange={(e) => {
+            setFormData((prev) => ({ ...prev, ["team_size"]: e.target.value }))
           }}
 
           value={formData.team_size}
@@ -122,11 +165,11 @@ function Component({ isEditable,isNameEditable,data }) {
           label="Substitute"
           variant="outlined"
 
-          onChange = {(e) => {
-            setFormData((prev) => ({...prev,["substitute"] : e.target.value}))
+          onChange={(e) => {
+            setFormData((prev) => ({ ...prev, ["substitute"]: e.target.value }))
           }}
 
-          value = {formData.substitute}
+          value={formData.substitute}
         />
         <RedTextField
           disabled={!isEditable}
@@ -135,11 +178,11 @@ function Component({ isEditable,isNameEditable,data }) {
           label="Entry Fee"
           variant="outlined"
 
-          onChange = {(e) => {
-            setFormData((prev) => ({...prev,["entry_fee"] : e.target.value}))
+          onChange={(e) => {
+            setFormData((prev) => ({ ...prev, ["entry_fee"]: e.target.value }))
           }}
 
-          value = {formData.entry_fee}
+          value={formData.entry_fee}
         />
       </Stack>
       <Grid className="grid_margin" container rowSpacing={3} columnSpacing={3}>
@@ -160,33 +203,33 @@ function Component({ isEditable,isNameEditable,data }) {
           maxRows={10}
           label="Rules"
           variant="outlined"
-          onChange = {(e) => {
-            setFormData((prev) => ({...prev,["rules"] : e.target.value}))
+          onChange={(e) => {
+            setFormData((prev) => ({ ...prev, ["rules"]: e.target.value }))
           }}
 
-          value = {formData.rules}
+          value={formData.rules}
         />
       </Stack>
 
       {
         isEditable && <Grid container rowSpacing={3} columnSpacing={3}>
-        <Grid item xs={7.5} />
-        <Grid item xs={4}>
-          <Stack
-            id="bottom_btn"
-            style={{ display: "flex", justifyContent: "end" }}
-          >
-            <Stack direction="row" spacing={2}>
-              <ColorButton variant="contained" size="large" type="submit">
-                Save
-              </ColorButton>
-              <ColorButton variant="contained" size="large" >
-                Cancel
-              </ColorButton>
+          <Grid item xs={7.5} />
+          <Grid item xs={4}>
+            <Stack
+              id="bottom_btn"
+              style={{ display: "flex", justifyContent: "end" }}
+            >
+              <Stack direction="row" spacing={2}>
+                <ColorButton variant="contained" size="large" type="submit">
+                  Save
+                </ColorButton>
+                <ColorButton variant="contained" size="large" >
+                  Cancel
+                </ColorButton>
+              </Stack>
             </Stack>
-          </Stack>
+          </Grid>
         </Grid>
-      </Grid>
       }
     </form>
   );

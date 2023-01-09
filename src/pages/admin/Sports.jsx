@@ -10,8 +10,8 @@ import Chess_i from "../../assets/icons/chess2.png";
 import Cricket_i from "../../assets/icons/cricket2.png";
 import Football_i from "../../assets/icons/football2.png";
 import Volleyball_i from "../../assets/icons/volleyball2.png";
-import Races_i from "../../assets/icons/Race.png";
-import Badminton_i from "../../assets/icons/Badminton.png";
+import Races_i from "../../assets/icons/race.png";
+import Badminton_i from "../../assets/icons/badminton.png";
 import Carrom_i from "../../assets/icons/carrom2.png";
 
 import "./Sportsdir/Sports.css"
@@ -47,6 +47,8 @@ function Sports() {
     size: "1",   fees: "20",    link: "/admin/winners",
     }
   ]
+
+
   //for selection of the particular card
   const [selectedIndex,setSelectedIndex] = useState(0) 
   const navigate = useNavigate()

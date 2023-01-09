@@ -18,21 +18,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 function Create() {
   return (
-    <form>
-      <Sportscomponent isEditable={true}/>
-      <Grid container rowSpacing={3} columnSpacing={3}>
-        <Grid item xs={7.5} />
-        <Grid item xs={4}>
-          <Stack id="bottom_btn" style={{ display:'flex' , justifyContent:'end'}}>
-           
-            <Stack direction="row" spacing={2}>
-              <ColorButton variant="contained" size="large" > Save  </ColorButton>
-              <ColorButton variant="contained" size="large">Cancel</ColorButton>
-            </Stack>
-          </Stack>
-        </Grid>
-      </Grid>
-    </form>
+      <Sportscomponent isEditable={true} isNameEditable={true} data = {{name : "", rules : "", substitute: "",team_size : "", id : "",entry_fee: ""}}/>
 
   )
 }

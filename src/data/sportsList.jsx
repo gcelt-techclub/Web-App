@@ -1,9 +1,9 @@
-import Chess from "../assets/icons/Chess1.png";
-import Races from "../assets/icons/Race.png";
-import Cricket from "../assets/icons/Cricket1.png";
-import Football from "../assets/icons/Football1.png";
-import Volleyball from "../assets/icons/Volleyball1.png";
-import Badminton from "../assets/icons/Badminton.png";
+import Chess from "../assets/icons/chess1.png";
+import Races from "../assets/icons/race.png";
+import Cricket from "../assets/icons/cricket1.png";
+import Football from "../assets/icons/football1.png";
+import Volleyball from "../assets/icons/volleyball1.png";
+import Badminton from "../assets/icons/badminton.png";
 import Carrom from "../assets/icons/carrom2.png";
 
 export const menuItem = [

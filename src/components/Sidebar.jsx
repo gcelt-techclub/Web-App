@@ -123,7 +123,14 @@ const Sidebar = () => {
           </ul>
           </div>
           <div className="Page_address">
-              <div >{ <ArrowBackIosNewIcon /> } </div>
+              <div onClick={() => {
+                // const presentLink = location.pathname.slice(1).split('/');
+                // presentLink.pop();
+                // presentLink.slice(1);
+                // const newLink = presentLink.join('/');
+                // console.log()
+                // navigate(newLink);
+              }}>{ <ArrowBackIosNewIcon /> } </div>
               <div className="address">{location.pathname.slice(1)}</div>  
           </div>
           <Outlet />

@@ -30,7 +30,8 @@ function Teams() {
               width: 520, height: 50, backgroundColor: '#2e325c',
               border: '2px solid #3b4285', borderRadius: '10px'
             }} elevation={8}>
-              <div id='Tname'> Team name </div>
+              <div id='Tname'> Team Name </div>
+              <div id='Yr'> Year </div>
               <Edit id='Edit_ico' onClick={ () => navigate(`/admin/teams/edit/team1}`) }/>
               <View id='View_ico'/>
             </Paper>

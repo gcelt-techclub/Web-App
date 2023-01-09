@@ -6,7 +6,13 @@
     font-size: 25px;
 }
 #Tname{
-    flex:80%;
+    flex:60%;
+    color:#fff;
+    display: grid;
+    place-items: center;
+}
+#Yr{
+    flex:20%;
     color:#fff;
     display: grid;
     place-items: center;

@@ -10,17 +10,22 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 
 // pages
-import Dashboard from "./admin/pages/Dashboard.jsx";
-import Teams from "./admin/pages/Teams.jsx";
-import Sports from "./admin/pages/Sports.jsx";
-import Tournament from "./admin/pages/Tournament.jsx";
-import Winners from "./admin/pages/Winners.jsx";
-import FeeRecords from "./admin/pages/FeeRecords.jsx";
-import SView from "./admin/pages/Sports/View";
-import SEdit from "./admin/pages/Sports/Edit";
-import SCreate from "./admin/pages/Sports/Create";
+import Dashboard from "./pages/admin/Dashboard.jsx";
+import Teams from "./pages/admin/Teams.jsx";
+import Sports from "./pages/admin/Sports.jsx";
+import Tournament from "./pages/admin/Tournament.jsx";
+import Winners from "./pages/admin/Winners.jsx";
+import FeeRecords from "./pages/admin/FeeRecords.jsx";
+
+import SView from "./pages/admin/Sportsdir/View";
+import SEdit from "./pages/admin/Sportsdir/Edit";
+import SCreate from "./pages/admin/Sportsdir/Create";
+
+// import TView from "./pages/admin/Teamsdir/View";
+import TEdit from "./pages/admin/Teamsdir/Edit";
+import TCreate from "./pages/admin/Teamsdir/Create";
 import Error from "./pages/Error";
-import LandingPage from "./admin/pages/LandingPage";
+import LandingPage from "./pages/admin/LandingPage";
 
 const App = () => {
   const { authIsReady, user } = useAuthContext();
@@ -51,6 +56,8 @@ const App = () => {
                 <Route path="sports/view/:sportsName" element={<SView />} />
                 <Route path="sports/edit/:sportsName" element={<SEdit />} />
                 <Route path="sports/create/:sportsName" element={<SCreate />} />
+                <Route path="teams/edit/:teamName" element={<TEdit />} />
+                <Route path="teams/create/:teamName" element={<TCreate />} />
               </Route>
               <Route path="/user" element={<h1>User</h1>}></Route>
               <Route path="*" element={<Error />} />

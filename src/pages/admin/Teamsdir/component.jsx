@@ -77,13 +77,8 @@ const CSSTextField = styled((props) => (
         InputLabelProps={{ style: { fontSize: 20, color: '#fff' } }} {...props} />
 ))(() => ({}));
 
-const RedTextField = styled((props) => (
-    <TextField InputProps={{ disableUnderline: true, style: { fontSize: 20, backgroundColor: '#F75555', border: '2px solid #F75555', borderRadius: '30px', color: '#fff', padding: 1, } }}
-        InputLabelProps={{ style: { fontSize: 20, color: '#fff' } }} {...props} />
-))(() => ({}));
 
-
-function component() {
+function Component() {
     const [personName, setPersonName] = useState([]);
 
     const handleChange = (event) => {
@@ -150,4 +145,4 @@ function component() {
     )
 }
 
-export default component
+export default Component

@@ -14,7 +14,7 @@ import Races_i from "../../assets/icons/Race.png";
 import Badminton_i from "../../assets/icons/Badminton.png";
 import Carrom_i from "../../assets/icons/carrom2.png";
 
-import "./Sports/Sports.css"
+import "./Sportsdir/Sports.css"
 
 function Sports() {
   const cards = [

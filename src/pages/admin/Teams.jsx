@@ -29,14 +29,15 @@ function Teams() {
         </Paper>
         <Grid container>
           <Grid item xs>
-          <Paper key={index} className="card" style={{width: 280,height: 130, backgroundColor: '#2e325c',
-			border: '2px solid #3b4285', borderRadius:'30px'}} elevation={8}>
-			<div className="icon">{sports.icon}</div>
-			<div className="title">{sports.title}</div>
-			<div className="details">Team Size:{sports.size}<br/>Entry Fees:{sports.fees} </div>
-			<div  id="view_icon" onClick={ () => navigate(`/admin/sports/view/${sports.title.toLowerCase()}`) } ><View /></div>
-			<div id="edit_icon" onClick={ () => navigate(`/admin/sports/edit/${sports.title.toLowerCase()}`)}><Edit /></div>
-			</Paper>
+            <Paper style={{
+              width: 520, height: 50, backgroundColor: '#2e325c',
+              border: '2px solid #3b4285', borderRadius: '10px'
+            }} elevation={8}>
+              <div> Team name </div>
+              <Edit />
+              <View />
+            </Paper>
+            
           </Grid>
           <Divider orientation="vertical" flexItem>
           </Divider>

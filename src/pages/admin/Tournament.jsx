@@ -1,12 +1,12 @@
 import React,{useState} from 'react'
 import Sportsbar from "../../components/SportsNavbar.jsx";
 import { Stack, Paper, styled, TextField, Grid, Button } from '@mui/material'
-import Matches from './Tournament/Matches.jsx';
-import Brackets from './Tournament/Brackets.jsx';
+import Matches from './Tournamentdir/Matches.jsx';
+import Brackets from './Tournamentdir/Brackets.jsx';
 
 // import { SelectedSports } from '../context/context.js';
 // Later we will pull it from DB
-import {menuItem} from '../data/sportsList'
+import {menuItem} from '../../data/sportsList'
 
 const ColorButton = styled(Button)(({ theme }) => ({
   backgroundColor: '#2e325c',

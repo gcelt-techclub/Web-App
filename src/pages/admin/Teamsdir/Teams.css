@@ -1,0 +1,21 @@
+.team_div{
+    display: flex;
+    color:#fff;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+#Tname{
+    flex:80%;
+    color:#fff;
+    display: grid;
+    place-items: center;
+}
+#Edit_ico{
+    flex:10%;
+    color:#fff;
+}
+#View_ico{
+    flex:10%;
+    color:#fff;
+}

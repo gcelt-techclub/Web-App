@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Sportsbar from "../../components/SportsNavbar.jsx";
+import "./Teamsdir/Teams.css"
 
-// import { SelectedSports } from '../context/context.js';
-
-// Later we will pull it from DB
-import { menuItem } from '../../data/sportsList'
 
 import DataSaverOnOutlinedIcon from '@mui/icons-material/DataSaverOnOutlined';
 import View from '@mui/icons-material/VisibilityOutlined';
@@ -28,20 +25,20 @@ function Teams() {
           <DataSaverOnOutlinedIcon id="add" onClick={() => navigate(`/admin/teams/create/${'untitled'}`)} />
         </Paper>
         <Grid container>
-          <Grid item xs>
-            <Paper style={{
+          <Grid item xs style={{marginRight:20}}>
+            <Paper  className="team_div"  style={{
               width: 520, height: 50, backgroundColor: '#2e325c',
               border: '2px solid #3b4285', borderRadius: '10px'
             }} elevation={8}>
-              <div> Team name </div>
-              <Edit />
-              <View />
+              <div id='Tname'> Team name </div>
+              <Edit id='Edit_ico' onClick={ () => navigate(`/admin/teams/edit/team1}`) }/>
+              <View id='View_ico'/>
             </Paper>
             
           </Grid>
-          <Divider orientation="vertical" flexItem>
+          <Divider orientation="vertical" flexItem color='#fff'>
           </Divider>
-          <Grid item xs>
+          <Grid item xs style={{marginLeft:20}}>
             ILU
           </Grid>
         </Grid>

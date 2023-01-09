@@ -27,6 +27,8 @@ import TCreate from "./pages/admin/Teamsdir/Create";
 import Error from "./pages/Error";
 import LandingPage from "./pages/admin/LandingPage";
 
+import Usernav from "./components/bottomNavbar"
+
 const App = () => {
   const { authIsReady, user } = useAuthContext();
 
@@ -59,7 +61,7 @@ const App = () => {
                 <Route path="teams/edit/:teamName" element={<TEdit />} />
                 <Route path="teams/create/:teamName" element={<TCreate />} />
               </Route>
-              <Route path="/user" element={<h1>User</h1>}></Route>
+              <Route path="/user" element={<Usernav />}></Route>
               <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

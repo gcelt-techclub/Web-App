@@ -1,0 +1,60 @@
+.match{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.firstbox , .secondbox
+{
+    width: 35vw;
+    height:40px;
+    background:#2e325c;
+    color:#fff;
+    border: 2px solid #3b4285;
+    box-shadow: 0 0 0 3px #3b4285;
+    display: flex;
+    font-size: 25px;
+}
+.firstbox
+{
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+.mid_diamond{
+    border-radius:2px;
+    box-shadow: 0 0 0 3px #5442cc;
+    background: #5442cc;
+    width:40px;
+    height:40px;  
+    transform: rotate(45deg);  
+    text-align: center;
+}
+.vs{
+    color: #fff;
+    display: table-cell;
+    height: 60px;
+    transform: rotate(-45deg);
+    place-items:center;
+	width:60px;
+    font-size: 25px;
+    left:50px;
+    padding:5px 0px 0px 15px;
+}
+.secondbox
+{
+    justify-content: end;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
+}
+.team1, .team2{
+    flex:30%;
+    display: grid;
+    justify-content: center;
+}
+.score1, .score2{
+    flex:20%;
+    display: grid;
+    justify-content: center;
+}
+.won_btn1, .won_btn2{
+    flex:50%;
+    display: grid;
+    justify-content: center;
+}

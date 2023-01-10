@@ -1,5 +1,6 @@
 // useState hook
 import { useState } from "react";
+import { useClickOutside } from '@mantine/hooks';
 
 // Avatar component
 import Avatar from "@mui/material/Avatar";
@@ -66,6 +67,9 @@ const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // for click outside amd close the dropdown
+  const ref = useClickOutside(() => setIsOpen(false));
+
   // hook function to logout
   const { logout, error } = useLogout();
 
@@ -110,7 +114,7 @@ const Sidebar = () => {
         <div className="container2">
           <div id="dp" onClick={toggledp}> 
           <Avatar sx={{ width: 50, height: 50 ,bgcolor: '#5442cc' }}>N</Avatar>
-          <ul className = {`sub-menu-holder ${ isOpen ? ' open-menu' : ' '} `}>
+          <ul ref={ref} className = {`sub-menu-holder ${ isOpen ? ' open-menu' : ''} `}>
             <li className="sub-menu">
               <Avatar sx={{ width: 30, height: 30 ,bgcolor: '#5442cc' }}>N</Avatar>
               <h4>Saptarshi Chatterjee</h4>

@@ -1,9 +1,9 @@
+// Imports
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore,collection } from "firebase/firestore";
 
-
+// Firebase Config
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -14,11 +14,13 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
+
+// Exporting the Database and Auth Instances
 export const app = initializeApp(firebaseConfig);
-
 export const auth = getAuth(app);
-
 export const db = getFirestore(app);
 
+// Exporting the DB Refs
+export const userRef = collection(db, "users");
 export const sportsRef = collection(db, "sports");
  

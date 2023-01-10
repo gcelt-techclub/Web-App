@@ -6,6 +6,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@g-loot/react-tournament-brackets": "^1.0.22",
+    "@mantine/hooks": "^5.10.0",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.3",
     "@mui/styled-engine-sc": "^5.11.0",

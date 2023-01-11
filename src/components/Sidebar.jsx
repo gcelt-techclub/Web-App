@@ -74,7 +74,7 @@ const Sidebar = () => {
   const { logout, error } = useLogout();
 
   // function to toggle dropdown
-  const toggledp = () => setIsOpen((pvalue) => !pvalue)
+  const toggledp = () => setIsOpen((pvalue) => pvalue ? false : true)
 
   // function to logout
   const logoutHandler = async () => {

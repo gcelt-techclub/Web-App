@@ -18,7 +18,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 function Create() {
   return (
-      <Sportscomponent isEditable={true} isNameEditable={true} data = {{name : "", rules : "", substitute: "",team_size : "", id : "",entry_fee: ""}}/>
+      <Sportscomponent isEditable={true} isNameEditable={true} data = {{name : "", rules : "", substitute: "",team_size : "", id : "",entry_fee: "",image_name: ""}}/>
 
   )
 }

@@ -13,7 +13,6 @@ import Football_i from "../../../assets/icons/football2.png";
 import "../../../App.css";
 
 import { createSport, updateSport } from "../../../API/sports";
-import { indexedDBLocalPersistence } from "firebase/auth";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -93,7 +92,6 @@ const RedTextField = styled((props) => (
 function Component({ isEditable, isNameEditable, data }) {
 
   const [formData, setFormData] = useState(data);
-  const [imgName, setImgName] = useState([]);
 
 
   const handleSubmit = async (e) => {
@@ -107,10 +105,7 @@ function Component({ isEditable, isNameEditable, data }) {
   };
 
 
-  const handleChange = (event) => {
-    setImgName(event.target.value);
-  };
-
+ 
   return (
     <form onSubmit={handleSubmit}>
       <Stack direction="row" spacing={2}>
@@ -118,9 +113,11 @@ function Component({ isEditable, isNameEditable, data }) {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={imgName}
+            value={formData.image_name}
             label="Age"
-            onChange={handleChange}
+            onChange={(e) => {setFormData((prev) => ({ ...prev, ["image_name"]: e.target.value }))}}
+
+            disabled={!isEditable}
           >
             {Sports_Icon_List.map((item, index) => (
               <MenuItem key={index} value={item.title} >
@@ -137,7 +134,6 @@ function Component({ isEditable, isNameEditable, data }) {
           variant="outlined"
           name="sports_name"
 
-          // inputProps = {{value : formData["name"]}}
           onChange={(e) => {
             setFormData((prev) => ({ ...prev, ["name"]: e.target.value }))
           }}
